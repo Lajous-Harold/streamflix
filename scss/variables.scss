@@ -1,0 +1,56 @@
+// ===============================
+// Variables couleurs
+// ===============================
+$primary-red: #e50914;
+$primary-dark: #221f1f;
+$secondary-gray: #564d4d;
+$text-light: #ffffff;
+$text-muted: #999999;
+$accent-blue: #0071eb;
+
+// Tonalités dérivées
+$bg: #0b0b0f;
+$bg-elev: #12121a;
+$bg-elev-2: #1a1a25;
+$outline: #3c3c4b;
+$card: #151520;
+
+// Effets
+$shadow-elev: 0 10px 30px rgba(0, 0, 0, 0.35);
+
+// ===============================
+// Variables typographie
+// ===============================
+$font-primary: "Netflix Sans", "Helvetica Neue", sans-serif;
+$font-secondary: "Arial", sans-serif;
+
+$font-size-base: 16px;
+$font-size-large: 24px;
+$font-size-small: 14px;
+
+// Rayons / tailles
+$radius: 16px;
+$radius-sm: 10px;
+$radius-lg: 22px;
+$maxw: 1200px;
+
+// Echelle d’espacement
+$s-1: 0.25rem;
+$s-2: 0.5rem;
+$s-3: 0.75rem;
+$s-4: 1rem;
+$s-5: 1.25rem;
+$s-6: 1.5rem;
+$s-7: 2rem;
+$s-8: 2.5rem;
+$s-9: 3rem;
+
+// Thème clair
+$light-bg: #fafafa;
+$light-bg-elev: #ffffff;
+$light-bg-elev-2: #f3f4f8;
+$light-text: #17171c;
+$light-muted: #545466;
+$light-outline: #d8dae6;
+$light-card: #ffffff;
+$shadow-light: 0 10px 24px rgba(0, 0, 0, 0.08);

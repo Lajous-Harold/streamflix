@@ -1,0 +1,70 @@
+@use "variables" as *;
+@use "mixins" as *;
+@use "breakpoints" as *;
+
+.main-footer {
+  background: $bg-elev;
+  border-top: 1px solid $outline;
+  margin-top: $s-9;
+
+  .footer-container {
+    @include container-max;
+    padding-block: $s-7;
+  }
+
+  .footer-content {
+    display: grid;
+    gap: $s-6;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .footer-section {
+    h3 {
+      margin: 0 0 $s-3;
+      font-size: 1rem;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.5rem;
+
+      a {
+        color: $text-muted;
+        text-decoration: none;
+        &:hover {
+          color: $text-light;
+        }
+      }
+    }
+  }
+
+  .social-links li {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .footer-bottom {
+    margin-top: $s-6;
+    padding-top: $s-4;
+    border-top: 1px solid $outline;
+    color: $text-muted;
+    display: grid;
+    gap: 0.25rem;
+    font-size: 0.95rem;
+  }
+}
+
+// Responsives footer
+@include down(md) {
+  .main-footer .footer-content {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@include down(sm) {
+  .main-footer .footer-content {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,39 @@
+@use "variables" as *;
+@use "mixins" as *;
+@use "breakpoints" as *;
+
+.btn {
+  --btn-bg: #3a3a4a;
+  --btn-fg: #{$text-light};
+
+  border: 0;
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  padding: 0.8rem 1.1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.06s ease, filter 0.15s ease;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset, 0 8px 18px rgba(0, 0, 0, 0.25);
+
+  &:hover {
+    filter: brightness(1.08);
+  }
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+.btn-primary {
+  --btn-bg: #{$primary-red};
+}
+.btn-secondary {
+  --btn-bg: #{$accent-blue};
+}
+.btn-tertiary {
+  --btn-bg: #3a3a4a;
+}
+
+.btn-full {
+  width: 100%;
+}

@@ -1,0 +1,13 @@
+@use "variables" as *;
+@use "mixins" as *;
+@use "breakpoints" as *;
+
+.badge-pill {
+  border-radius: 999px;
+  padding: 0.25rem 0.6rem;
+  font-weight: 700;
+}
+.badge-genre {
+  @extend .badge-pill;
+  @extend .badge-soft !optional;
+}

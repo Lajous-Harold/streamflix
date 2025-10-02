@@ -1,0 +1,67 @@
+@use "variables" as *;
+@use "mixins" as *;
+@use "breakpoints" as *;
+
+.film-card {
+  @include card-surface;
+  overflow: clip;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  transition: transform 0.12s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+    border-color: color-mix(in oklab, $outline 60%, $accent-blue);
+  }
+
+  &:focus {
+    outline: none;
+  }
+  &:focus-visible {
+    box-shadow: 0 0 0 3px $accent-blue, $shadow-elev;
+  }
+}
+
+.film-poster {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+}
+
+.film-info {
+  padding: $s-4;
+  display: grid;
+  gap: 0.35rem;
+
+  .film-title {
+    margin: 0 0 0.25rem;
+    font-size: 1.05rem;
+  }
+  .film-meta {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    color: $text-muted;
+    font-size: 0.92rem;
+    font-weight: 600;
+  }
+
+  .film-genres {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+}
+
+// Badges doux réutilisables
+.badge-soft {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: $text-muted;
+  border: 1px solid $outline;
+  border-radius: 999px;
+  padding: 0.2rem 0.55rem;
+  font-weight: 700;
+  font-size: 0.8rem;
+}

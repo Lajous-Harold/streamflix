@@ -1,0 +1,164 @@
+@use "variables" as *;
+@use "mixins" as *;
+@use "breakpoints" as *;
+
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: saturate(140%) blur(10px);
+  background: color-mix(in oklab, $bg-elev 75%, transparent);
+  border-bottom: 1px solid $outline;
+
+  .logo {
+    height: 40px;
+    width: auto;
+    display: block;
+  }
+}
+
+.header-container {
+  @include container-max;
+  padding-block: $s-4;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: $s-4;
+  align-items: center;
+}
+
+.main-nav {
+  .nav-list {
+    list-style: none;
+    display: flex;
+    gap: $s-5;
+    padding: 0;
+    margin: 0;
+
+    a {
+      color: $text-light;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.5rem 0.75rem;
+      border-radius: 999px;
+      transition: background 0.2s;
+
+      &[aria-current="page"],
+      &:hover {
+        background: #3a3a4a;
+      }
+    }
+  }
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: $s-4;
+}
+
+// Recherche compacte
+.search-form {
+  display: flex;
+  align-items: stretch;
+  gap: 0.5rem;
+  background: $bg-elev-2;
+  border: 1px solid $outline;
+  border-radius: 999px;
+  padding: 0.25rem 0.25rem 0.25rem 0.75rem;
+
+  input[type="search"] {
+    background: transparent;
+    border: 0;
+    color: $text-light;
+    min-width: 10ch;
+    outline: none;
+
+    &::placeholder {
+      color: color-mix(in oklab, $text-muted 70%, $text-light);
+    }
+  }
+
+  button {
+    border: 0;
+    background: #3a3a4a;
+    color: $text-light;
+    padding: 0.5rem 0.75rem;
+    border-radius: 999px;
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(1.05);
+    }
+  }
+}
+
+// Menu profil
+.profile-menu {
+  position: relative;
+
+  .profile-button {
+    border: 1px solid $outline;
+    background: $bg-elev-2;
+    color: $text-light;
+    padding: 0.5rem 0.6rem;
+    border-radius: 999px;
+    cursor: pointer;
+  }
+
+  .profile-dropdown {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 0.5rem);
+    min-width: 220px;
+    @include card-surface;
+    border-radius: $radius-sm;
+    padding: 0.5rem;
+    list-style: none;
+    margin: 0;
+    display: none;
+
+    a {
+      display: block;
+      padding: 0.6rem 0.75rem;
+      border-radius: 8px;
+      color: $text-light;
+      text-decoration: none;
+
+      &:hover {
+        background: #3a3a4a;
+      }
+    }
+  }
+
+  // toggle via aria-expanded (si tu ne dépends pas de Bootstrap dropdown)
+  .profile-button[aria-expanded="true"] + .profile-dropdown {
+    display: block;
+  }
+}
+
+// Responsive header
+
+@include down(md) {
+  .header-container {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "logo profile"
+      "nav nav";
+    row-gap: $s-3;
+  }
+  .logo-section {
+    grid-area: logo;
+  }
+  .main-nav {
+    grid-area: nav;
+  }
+  .user-section {
+    grid-area: profile;
+    justify-self: end;
+  }
+
+  .main-nav .nav-list {
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "streamflix",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass scss/main.scss:dist/style.css --style=expanded --source-map",
+    "sass:watch": "sass --watch scss/main.scss:dist/style.css --style=expanded --source-map --load-path=scss",
+    "sass:prod": "sass scss/main.scss:dist/style.css --style=compressed",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lajous-Harold/streamflix.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Lajous-Harold/streamflix/issues"
+  },
+  "homepage": "https://github.com/Lajous-Harold/streamflix#readme",
+  "devDependencies": {
+    "sass": "^1.93.2"
+  }
+}

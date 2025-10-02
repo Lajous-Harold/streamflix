@@ -1,0 +1,16 @@
+@use "variables" as *;
+@use "mixins" as *;
+@use "breakpoints" as *;
+
+h1,
+h2,
+h3 {
+  margin: 0 0 $s-4;
+}
+.lead {
+  font-size: 1.05rem;
+  color: $text-muted;
+}
+.rating {
+  letter-spacing: 0.02em;
+}

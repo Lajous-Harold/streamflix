@@ -1,0 +1,32 @@
+@use "variables" as *;
+@use "mixins" as *;
+@use "breakpoints" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  font-size: $font-size-base;
+}
+
+body {
+  margin: 0;
+  font-family: $font-primary;
+  color: $text-light;
+  background: linear-gradient(180deg, $bg 0%, $bg-elev 100%);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+a {
+  -webkit-tap-highlight-color: transparent;
+}

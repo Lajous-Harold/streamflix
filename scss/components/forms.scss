@@ -1,0 +1,93 @@
+@use "variables" as *;
+@use "mixins" as *;
+@use "breakpoints" as *;
+
+.signup-section {
+  background: linear-gradient(180deg, $bg-elev 0%, $bg-elev-2 100%);
+  border-block: 1px solid $outline;
+}
+
+.signup-container {
+  @include container-max;
+  max-width: 760px;
+  text-align: center;
+  padding-block: $s-8;
+}
+
+.signup-form {
+  margin-top: $s-5;
+  @include card-surface;
+  border-radius: $radius-lg;
+  padding: $s-6;
+  text-align: left;
+
+  fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: $s-4;
+  }
+}
+
+.form-group {
+  display: grid;
+  gap: 0.4rem;
+}
+
+label {
+  font-weight: 700;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="search"] {
+  appearance: none;
+  width: 100%;
+  padding: 0.8rem 0.9rem;
+  border-radius: 12px;
+  border: 1px solid $outline;
+  background: $bg-elev-2;
+  color: $text-light;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+
+  &::placeholder {
+    color: color-mix(in oklab, $text-muted 70%, $text-light);
+  }
+  &:focus {
+    border-color: $accent-blue;
+    box-shadow: 0 0 0 3px color-mix(in oklab, $accent-blue 30%, transparent);
+  }
+}
+
+.help-text {
+  color: $text-muted;
+  font-size: 0.9rem;
+}
+.error-message {
+  min-height: 1.25rem;
+  color: #ff7676;
+  font-size: 0.9rem;
+}
+
+.checkbox-group {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.75rem;
+  align-items: start;
+
+  input[type="checkbox"] {
+    width: 1.15rem;
+    height: 1.15rem;
+    margin-top: 0.3rem;
+    accent-color: $accent-blue;
+  }
+
+  a {
+    color: $accent-blue;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

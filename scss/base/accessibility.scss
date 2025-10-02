@@ -1,0 +1,27 @@
+@use "variables" as *;
+@use "mixins" as *;
+@use "breakpoints" as *;
+
+.visually-hidden {
+  @include hide-visually;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: $accent-blue;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  z-index: 1000;
+  text-decoration: none;
+
+  &:focus {
+    top: 1rem;
+  }
+}
+
+:focus-visible {
+  @include focus-ring($accent-blue);
+}

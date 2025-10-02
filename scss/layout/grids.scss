@@ -1,0 +1,44 @@
+@use "variables" as *;
+@use "mixins" as *;
+@use "breakpoints" as *;
+
+.content-grids {
+  @include container-max;
+  padding-block: $s-7;
+  display: grid;
+  gap: $s-8;
+}
+
+.section-title {
+  margin: 0 0 $s-4;
+  font-size: clamp(1.3rem, 0.8vw + 1rem, 1.8rem);
+}
+
+.films-grid {
+  display: grid;
+  gap: $s-9;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.genre {
+  background: $bg-elev-2;
+  border: 1px solid $outline;
+  color: $text-muted;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+// Utilitaire a11y de group label
+[role="group"][aria-label]::before {
+  content: attr(aria-label);
+  @include hide-visually;
+}
+
+// Responsives
+@include down(sm) {
+  .films-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
