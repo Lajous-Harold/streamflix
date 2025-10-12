@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Accessibilité */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: theme("colors.secondary");
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  z-index: 1000;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+/***** Helpers *****/
+.hero-shadow {
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
+}
+.badge-soft {
+  @apply bg-white/5 text-muted border border-outline rounded-full px-2 py-0.5 text-xs;
+}
+.card-soft {
+  @apply bg-card border border-outline rounded-xl shadow-elev transition-transform;
+}
+.card-soft:hover {
+  transform: translateY(-2px);
+}
+
+/* Boutons / inputs */
+.input-soft {
+  @apply bg-bg-elev-2 border border-outline text-text rounded-lg px-3 py-2 w-full placeholder:opacity-70 focus:outline-none focus:ring-4 focus:ring-secondary/25 focus:border-secondary;
+}
+.btn {
+  @apply inline-flex items-center justify-center gap-2 font-medium rounded-lg px-4 py-2;
+}
+.btn-primary {
+  @apply bg-primary text-white hover:opacity-95;
+}
+.btn-secondary {
+  @apply bg-secondary text-white hover:opacity-95;
+}
+.btn-outline {
+  @apply border border-white/30 text-white hover:bg-white/10;
+}
